@@ -28,18 +28,18 @@ public class ExercicioController {
 	
 	@PostMapping("/cadastro")
 	@ResponseBody
-	public String cadastrarAtualizar(@RequestBody Exercicio exercicio) {
+	public String cadastrarAtualizar(@RequestBody Exercicio exercicio) throws Exception {
 		return eService.saveUpdate(exercicio);
 	}
 	
 	@PostMapping("/deletar")
 	@ResponseBody
-	public String deletar(@RequestBody Long idExercicio) {
+	public String deletar(@RequestBody Long idExercicio) throws Exception {
 		return eService.delete(idExercicio);
 	}
 	
 	@GetMapping("/all")
-	public List<Exercicio> findByTreino(@RequestParam("idTreino") Long idTreino) {
+	public List<Exercicio> findByTreino(@RequestParam("idTreino") Long idTreino) throws Exception {
 		return eService.findByTreino(idTreino);
 	}
 }
